@@ -1,6 +1,5 @@
 #include<iostream>
 #include<queue>
-#include<vector>
 
 // https://www.acmicpc.net/problem/6593
 
@@ -38,8 +37,7 @@ void BFS() {
 
 			if (map[curFloor][moveY][moveX] == -2 || map[curFloor][moveY][moveX] > map[curFloor][curPosY][curPosX] + 1) {
 				map[curFloor][moveY][moveX] = map[curFloor][curPosY][curPosX] + 1;
-				pair<int, pair<int, int>> pos = { curFloor, { moveY,moveX } };
-				q.push(pos);
+				q.push({ curFloor, { moveY,moveX } });
 			}
 		}
 
@@ -51,8 +49,7 @@ void BFS() {
 
 			if (map[moveF][curPosY][curPosX] == -2 || map[moveF][curPosY][curPosX] > map[curFloor][curPosY][curPosX] + 1) {
 				map[moveF][curPosY][curPosX] = map[curFloor][curPosY][curPosX] + 1;
-				pair<int, pair<int, int>> pos = { moveF, { curPosY,curPosX } };
-				q.push(pos);
+				q.push({ moveF, { curPosY,curPosX } });
 			}
 		}
 	}
