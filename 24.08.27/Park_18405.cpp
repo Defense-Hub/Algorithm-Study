@@ -1,3 +1,6 @@
+// re!
+// https://www.acmicpc.net/problem/18405
+// ref : https://allmymight.tistory.com/169
 #include <iostream>
 #include <queue>
 
