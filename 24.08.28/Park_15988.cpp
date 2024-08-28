@@ -23,14 +23,14 @@ int main (){
     dp[1] = 1;
     dp[2] = 2;
     dp[3] = 4;
+    
+    for(int j = 4; j <= MAX; j++){
+        dp[j] = (dp[j-1]%DIV + dp[j-2]%DIV + dp[j-3]%DIV)%DIV;
+    }
 
     for(int k = 0; k < tc; k++){
         int n;
         cin >> n;
-        for(int j = 4; j <= n; j++){
-            dp[j] = (dp[j-1]%DIV + dp[j-2]%DIV + dp[j-3]%DIV)%DIV;
-        }
-
         cout << dp[n] << "\n";
     }
 }
