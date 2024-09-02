@@ -1,9 +1,4 @@
 #include<iostream>
-#include<vector>
-#include<queue>
-#include<algorithm>
-
-#define INF 1e9
 
 // https://www.acmicpc.net/problem/1058
 
