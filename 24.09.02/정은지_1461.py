@@ -1,8 +1,9 @@
 n,m = map(int,input().split())
 positions = list(map(int,input().split()))
 
-lLst = []
-rLst = []
+# 0으로 선언해야 n이 1일 때 인덱스 오류 안남
+lLst = [0]
+rLst = [0]
 
 for pos in positions:
     if pos < 0:
