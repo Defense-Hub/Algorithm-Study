@@ -7,7 +7,7 @@ for i in range(n):
 dp = [0]*10000
 dp[0] = array[0]
 dp[1] = array[0] + array[1]
-dp[2] = max(array[2]+array[0], array[2]+array[1], d[1])
+dp[2] = max(array[2]+array[0], array[2]+array[1], dp[1])
 
 for i in range(3,n):
   dp[i] = max(array[i] + dp[i-2], 
