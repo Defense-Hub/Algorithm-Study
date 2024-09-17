@@ -117,6 +117,32 @@ void MergeSort(int left, int right){
     Merge(left, mid, right);
 }
 
+int Partition(int l, int r){
+    int pivot = arr[r]; // 임의의 한 숫자 pivot으로 설정
+    int i = l - 1; // 가장 작은 숫자
+    cout << "left : " << l << " right : " << r << " Pivot : "<< pivot << endl;
+    for(int k = l; k < r; k++){
+        if(arr[k] <= pivot)
+            Swap(++i, k);
+    }
+    if(i+1 != r)
+        Swap(i+1, r);
+
+    for(int num : arr){
+        cout << num << " ";
+    }
+    cout << endl;
+    cout << endl;
+    return i + 1;
+}
+
+void QuickSort(int left, int right){
+    if(left >= right) return;
+    int pIdx = Partition(left, right);
+    QuickSort(left, pIdx - 1);
+    QuickSort(pIdx + 1, right);
+}
+
 int main (){ios::sync_with_stdio(0);cin.tie(0); cout.tie(0);
-    MergeSort(0, arr.size() - 1);
+    QuickSort(0, arr.size() - 1);
 }
