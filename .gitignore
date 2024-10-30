@@ -1,3 +1,4 @@
 *.exe
 *.json
 *.DS_Store
+/PrivateFolder
