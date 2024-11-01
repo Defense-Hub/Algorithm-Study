@@ -2,7 +2,7 @@
 #include <vector>
 #include<queue>
 #include<map>
-#include<iostream>
+
 using namespace std;
 
 map<pair<int,int>, int> robotMap;
@@ -27,10 +27,12 @@ int solution(vector<vector<int>> points, vector<vector<int>> routes) {
     vector<vector<pair<int,int>>> move;
     queue<pair<pair<int,int>,pair<int,int>>> q;
     
+    // 초기화
     for(int i = 0; i < routes.size(); i++){
         vector<pair<int,int>> temp;
         for(int j = 0; j < routes[i].size(); j++){
-            if(j == 0){
+            if(j == 0){ // 시작 좌표
+            	// {{로봇의 번호, 다음 목적지 번호}, {현재 좌표}}
                 q.push({{i , 1}, {points[routes[i][j] - 1][0],  points[routes[i][j] - 1][1]}});
             }
             temp.push_back({points[routes[i][j] - 1][0], points[routes[i][j] - 1][1]});
@@ -38,11 +40,13 @@ int solution(vector<vector<int>> points, vector<vector<int>> routes) {
         move.push_back(temp);
     }
     
+    // 첫 좌표가 같을 경우 판별
     for(int i = 0; i < move.size(); i++){
         robotMap[{move[i][0].first, move[i][0].second}]++;
     }
     answer += GetAnswer();
     
+    // 시뮬레이션 시작
     while(!q.empty()){
         robotMap.clear();
         int size = q.size();
