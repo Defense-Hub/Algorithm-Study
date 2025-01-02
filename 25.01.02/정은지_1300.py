@@ -13,7 +13,7 @@ def BinarySearch(n, k):
 
     while left <= right:
         mid = (left + right) // 2
-        if countNum(mid, n) < k:
+        if Add(mid, n) < k:
             left = mid + 1
         else:
             right = mid - 1
