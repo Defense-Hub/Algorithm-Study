@@ -3,7 +3,8 @@
 #include <algorithm>
 #define INF 987654321
 using namespace std;
-// 우주 탐사선 _ 14 55 ~ 15 05, 16 00 ~ 
+// 우주 탐사선 _ 14 55 ~ 15 05, 16 00 ~ 17 50
+// Ref : https://khj0426.tistory.com/153
 int n, k;
 vector<vector<int>> board;
 vector<vector<int>> cost;
