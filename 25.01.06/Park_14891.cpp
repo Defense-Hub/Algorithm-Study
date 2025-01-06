@@ -3,7 +3,7 @@
 #include <deque>
 #include <algorithm>
 using namespace std;
-// 15:50
+// 15:50 ~ 17:20
 // 오른쪽 idx = 2, 왼쪽 idx = -2
 // Deque로 해결? 
 // 정방향 : 뒤에서 하나 빼서 앞으로 넣기, 
