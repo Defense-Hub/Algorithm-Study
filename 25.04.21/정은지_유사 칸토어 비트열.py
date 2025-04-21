@@ -1,22 +1,18 @@
-# 17:09 ~ 17:40
+# 17:09 ~ 17:44
 
-def is_one(index,n):
-    while(n > 0):
-        length = 5 ** (n-1)
-        section = index // length
-        
-        if section == 2:
-            return False  
-        
-        index %= length
-        n-=1
-    
-    return True
+def is_one(index):
+    while index >= 5:
+        if (index - 2) % 5 == 0:
+            return False
+        index //= 5
+
+    return index != 2
+
 
 def solution(n, l, r):
     answer = 0
     for i in range(l-1,r):
-        if is_one(i,n):
+        if is_one(i):
             answer += 1
         
     return answer
